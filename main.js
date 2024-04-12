@@ -15,8 +15,8 @@ document.querySelector('#app').innerHTML = `
         </div>
         <div class="speed">
           <label for="speedSlider">Rotation Speed </label>
-          <input type="range" min="1" max="20" value="5" class="slider" id="speedSlider">
-          <span id="speedValue">5</span>
+          <input type="range" min="1" max="20" value="1" class="slider" id="speedSlider">
+          <span id="speedValue">1</span>
         </div>
         <div class= "size">
           <label for="sizeSlider"> Triangle Size </label>
@@ -42,14 +42,16 @@ document.querySelector('#app').innerHTML = `
 // vars ------------------------------------------------
 
 const canvas = document.getElementById('canvas');
-const sizeScaler = 3;
-canvas.width = 100 * sizeScaler;
-canvas.height = 100 * sizeScaler;
 const ctx = canvas.getContext('2d');
 
 const sidesSlider = document.getElementById('sidesSlider');
 const speedSlider = document.getElementById('speedSlider');
 const sizeSlider = document.getElementById('sizeSlider');
+
+const sizeScaler = 3;
+canvas.width = sizeSlider.value * sizeScaler;
+canvas.height = sizeSlider.value * sizeScaler;
+
 const colorPicker = document.getElementById('colorPicker');
 const dropbtn = document.querySelector('.dropbtn');
 const direction = document.getElementById('direction');
